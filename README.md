@@ -9,7 +9,7 @@ This application is configured for Service Discovery and Configuration with the 
 
 To start your application in the dev profile, simply run:
 
-    ./mvnw
+    ./gradlew
 
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
@@ -20,11 +20,11 @@ For further instructions on how to develop with JHipster, have a look at [Using 
 
 To optimize the trailsRouteUaa application for production, run:
 
-    ./mvnw -Pprod clean package
+    ./gradlew -Pprod clean bootRepackage
 
 To ensure everything worked, run:
 
-    java -jar target/*.war
+    java -jar build/libs/*.war
 
 
 Refer to [Using JHipster in production][] for more details.
@@ -33,7 +33,7 @@ Refer to [Using JHipster in production][] for more details.
 
 To launch your application's tests, run:
 
-    ./mvnw clean test
+    ./gradlew test
 
 For more information, refer to the [Running tests page][].
 
@@ -52,7 +52,7 @@ To stop it and remove the container, run:
 You can also fully dockerize your application and all the services that it depends on.
 To achieve this, first build a docker image of your app by running:
 
-    ./mvnw verify -Pprod dockerfile:build
+    ./gradlew bootRepackage -Pprod buildDocker
 
 Then run:
 
